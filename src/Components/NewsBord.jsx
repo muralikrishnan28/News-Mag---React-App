@@ -4,8 +4,6 @@ import Error from "./Error";
 import Loading from './Loading'
 import axios from "axios";
 
-const NEWS_API_KEY = import.meta.env.VITE_NEWS_API_KEY;
-
 export default function NewsBord({ category }) {
 
   const [reqHandle, setReqHandle] = useState({ loading:true, err:false});
@@ -16,8 +14,7 @@ export default function NewsBord({ category }) {
   const ApiCall = useCallback( async () => {
     setReqHandle(prev => ({...prev, loading:true}));
     try {
-      let url = `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${NEWS_API_KEY}`;
-      const response = await axios.get(url);
+      const response = await axios.get(`/.netlify/functions/getNews?category=${category}`);
       setArticles(response.data.articles);
     } catch (error) {
       setReqHandle( prev => ({...prev, err:true }));
