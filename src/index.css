@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Slabo+27px&display=swap');
+
+body {
+    font-family: 'Newsreader', 'PT Serif', 'Slabo 21px' serif;
+}
+
+h1 {
+    font-family: 'PT Serif', serif;
+}
+p {
+    font-family: 'Newsreader';
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+.shadow {
+    color: rgb(100, 100, 100);
+}
+.shadow:hover {
+    transition: 0.35s;
+    color: rgb(0, 0, 0);
+}
+ul li:after {
+    color: red;
+}
+ul li:hover {
+    color: rgb(255, 162, 0);
+}
+.tag-color, ul li {
+    cursor: pointer;
+}
+.vh-80 {
+    height: 79vh;
+}
